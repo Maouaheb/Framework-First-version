@@ -27,6 +27,7 @@ public class Delta implements Interpreter {
     public String getxsdDeclaration() throws IOException {
         return Files.readString(Path.of("src/main/resources/delta.xsd.txt"), StandardCharsets.UTF_8);
     }
+    // optionnel peut être
     private boolean checAddSuppStructure(Element adder){
         for (Element file:adder.getChildren()) {
             if(!Objects.equals(file.getName(), "file"))return false;
@@ -75,10 +76,14 @@ public class Delta implements Interpreter {
 
     @Override
     public void construct(Element node, Map<String, String> importer) {
+    	System.out.println("je suis delta");
+    	// on donne possibilité s'il y a attribut url dans l'element delta on le récupére
+    
         this.remote = node.getAttributeValue("url");
         if(Objects.equals(this.remote, "") || this.remote == null){
             if(new Importer().isAnUrl(importer.values().toArray()[0].toString())){
-                List<String> path = List.of(new File(String.valueOf(importer.values().toArray()[0])).getParent()
+               // pour avoir les slash pour le split
+            	List<String> path = List.of(new File(String.valueOf(importer.values().toArray()[0])).getParent()
                     .split(Pattern.quote(System.getProperty("file.separator"))));
                 this.remote = String.join("/",path.subList(0, path.size()-1))+"/tree/"+node.getAttributeValue("name");
             }else{

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FeatureModel">
+	<xs:complexType>
+	<xs:choice maxOccurs="unbounded">
+		<xs:element name="SpringAspect">
+		<xs:complexType>
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="file">
+			<xs:complexType>
+				<xs:attribute name="path" type="xs:string"/>
+			</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="require" type="xs:string"/>
+		</xs:complexType>
+		</xs:element>
+		<xs:element name="SpringPreprocessor">
+			<xs:complexType>
+				<xs:sequence minOccurs="1" maxOccurs="unbounded">
+					<xs:element name="file">
+						<xs:complexType>
+							<xs:sequence minOccurs="0" maxOccurs="unbounded">
+								<xs:element name="var">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:anyAttribute processContents="lax"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="path" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="require" type="xs:string"/>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="Delta">
+		<xs:complexType>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="modif">
+				<xs:complexType>
+				<xs:sequence minOccurs="1" maxOccurs="unbounded">
+					<xs:element name="file">
+						<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="add" />
+						</xs:sequence>
+						<xs:attribute name="path" type="xs:string"/>
+						<xs:attribute name="type" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="addFile">
+				<xs:complexType>
+				<xs:sequence minOccurs="1" maxOccurs="unbounded">
+					<xs:element name="file">
+					<xs:complexType>
+						<xs:attribute name="path" type="xs:string"/>
+					</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deleteFile">
+				<xs:complexType>
+				<xs:sequence minOccurs="1" maxOccurs="unbounded">
+					<xs:element name="file">
+					<xs:complexType>
+						<xs:attribute name="path" type="xs:string"/>
+					</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="require" type="xs:string"/>
+		</xs:complexType>
+		</xs:element>
+		<xs:element name="Plugin">
+		<xs:complexType>
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="file">
+			<xs:complexType>
+				<xs:attribute name="path" type="xs:string"/>
+			</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="require" type="xs:string"/>
+		</xs:complexType>
+		</xs:element>
+	</xs:choice>
+	</xs:complexType>
+	</xs:element>
+</xs:schema>

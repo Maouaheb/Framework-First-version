@@ -30,6 +30,7 @@ public class main_engine {
         switch (racine.getName()){
             case "Configuration":
                 try {
+                	System.out.println("configuration file");
                     buildConfig(racine, args.length > 1 && Boolean.parseBoolean(args[1]));
                 }catch (RequirementException | StructureNotSupportedException e){
                     e.printStackTrace();
@@ -161,6 +162,7 @@ public class main_engine {
         for (Interpreter service : serviceLoader) {
             services.put(service.getName(), service);
         }
+        System.out.println("nombre de plugins: "+services.size());
         return services;
     }
 }

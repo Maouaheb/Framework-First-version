@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>exceptions.StructureNotSupportedException</OriginalElement>
+  <nodes>
+    <node x="1012.326696123147" y="827.7799315849487">main_engine</node>
+    <node x="1754.384264538198" y="490.0">lib.JavaFileManager</node>
+    <node x="1441.3299268339035" y="626.0">lib.CompileManager</node>
+    <node x="1386.799315849487" y="786.5889395667048">Interpreter</node>
+    <node x="1144.9958333333334" y="627.0">PluginLoader</node>
+    <node x="679.4766248574688" y="973.619156214367">exceptions.StructureNotSupportedException</node>
+    <node x="713.4766248574688" y="895.8095781071835">exceptions.RequirementException</node>
+    <node x="693.8133931965032" y="505.0">lib.Importer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lib.Importer" target="lib.JavaFileManager" relationship="DEPENDENCY">
+      <point x="1.6666666670062114E-4" y="-171.0" />
+      <point x="830.8135598631699" y="465.0" />
+      <point x="1901.3841858608894" y="465.0" />
+      <point x="-7.867730869293155E-5" y="-171.0" />
+    </edge>
+    <edge source="main_engine" target="lib.Importer" relationship="CREATE">
+      <point x="-128.90818985176554" y="-25.993933865450458" />
+      <point x="1014.4185062713815" y="868.5708551881414" />
+      <point x="899.3133931965032" y="868.5708551881414" />
+      <point x="68.5" y="171.0" />
+    </edge>
+    <edge source="lib.Importer" target="lib.Importer" relationship="DEPENDENCY">
+      <point x="-134.9251774610368" y="-90.65450399087763" />
+      <point x="695.8882157354664" y="601.3215507411632" />
+      <point x="662.4108846446218" y="601.3215507411632" />
+      <point x="662.4108846446218" y="676.0" />
+      <point x="-137.0" y="-0.0" />
+    </edge>
+    <edge source="main_engine" target="PluginLoader" relationship="CREATE">
+      <point x="122.46549315849643" y="-66.4492588369435" />
+      <point x="1265.7921892816435" y="806.5" />
+      <point x="1266.9324401368312" y="806.5" />
+      <point x="19.436606803497853" y="50.287343215508486" />
+    </edge>
+    <edge source="lib.Importer" target="exceptions.StructureNotSupportedException" relationship="CREATE">
+      <point x="-133.78492660584868" y="153.35917901938456" />
+      <point x="704.3500570125427" y="829.3591790193846" />
+      <point x="704.3500570125427" y="953.789007981756" />
+      <point x="811.4766248574688" y="953.789007981756" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main_engine" target="Interpreter" relationship="DEPENDENCY">
+      <point x="65.5" y="-71.0" />
+      <point x="1208.826696123147" y="898.0" />
+      <point x="1340.804841315089" y="898.0" />
+      <point x="1340.804841315089" y="898.7799315849488" />
+      <point x="1388.9392816419645" y="898.7799315849488" />
+      <point x="-163.8600342075224" y="35.8152793614596" />
+    </edge>
+    <edge source="main_engine" target="main_engine" relationship="DEPENDENCY">
+      <point x="-104.62175883694226" y="74.59083238312417" />
+      <point x="1038.7049372862048" y="989.7799315849487" />
+      <point x="992.326696123147" y="989.7799315849487" />
+      <point x="992.326696123147" y="953.789007981756" />
+      <point x="-131.89728905358993" y="55.009076396807245" />
+    </edge>
+    <edge source="main_engine" target="exceptions.StructureNotSupportedException" relationship="CREATE">
+      <point x="-128.70590022804993" y="40.87344127708093" />
+      <point x="811.4766248574688" y="939.6533728620296" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main_engine" target="lib.CompileManager" relationship="DEPENDENCY">
+      <point x="-27.567802166473484" y="-73.95671607753786" />
+      <point x="1115.7588939566735" y="546.8027366020525" />
+      <point x="1652.1632601672368" y="546.8027366020525" />
+      <point x="84.33333333333326" y="50.0" />
+    </edge>
+    <edge source="PluginLoader" target="Interpreter" relationship="CREATE">
+      <point x="62.76613930064718" y="46.8665906499441" />
+      <point x="1310.2619726339806" y="822.654503990878" />
+      <point x="1390.0795324971505" y="822.654503990878" />
+      <point x="-162.71978335233644" y="-40.581527936144994" />
+    </edge>
+    <edge source="lib.CompileManager" target="lib.CompileManager" relationship="TO_ONE">
+      <point x="-84.33333333333331" y="50.0" />
+      <point x="1483.4965935005703" y="746.0" />
+      <point x="1421.3299268339035" y="746.0" />
+      <point x="1421.3299268339035" y="701.0" />
+      <point x="-126.5" y="25.0" />
+    </edge>
+    <edge source="lib.CompileManager" target="lib.CompileManager" relationship="CREATE">
+      <point x="0.0" y="50.0" />
+      <point x="1567.8299268339035" y="756.0" />
+      <point x="1411.3299268339035" y="756.0" />
+      <point x="1411.3299268339035" y="651.0" />
+      <point x="-126.5" y="-25.0" />
+    </edge>
+    <edge source="lib.JavaFileManager" target="lib.JavaFileManager" relationship="TO_ONE">
+      <point x="0.0" y="171.0" />
+      <point x="1901.384264538198" y="849.5" />
+      <point x="2095.8842645381983" y="849.5" />
+      <point x="2095.8842645381983" y="691.0" />
+      <point x="147.0" y="30.0" />
+    </edge>
+    <edge source="PluginLoader" target="PluginLoader" relationship="DEPENDENCY">
+      <point x="-51.25" y="49.0" />
+      <point x="1196.2458333333334" y="745.0" />
+      <point x="1124.9958333333334" y="745.0" />
+      <point x="1124.9958333333334" y="676.0" />
+      <point x="-102.5" y="-0.0" />
+    </edge>
+    <edge source="main_engine" target="exceptions.RequirementException" relationship="CREATE">
+      <point x="-130.5279663625995" y="4.893327251995629" />
+      <point x="1012.7987297605475" y="910.3095781071835" />
+      <point x="929.2718554161919" y="910.3095781071835" />
+      <point x="929.2718554161919" y="910.2411037628281" />
+      <point x="98.42586773090102" y="-0.06847434435542255" />
+    </edge>
+    <edge source="lib.JavaFileManager" target="lib.JavaFileManager" relationship="CREATE">
+      <point x="14.999921322691307" y="-171.0" />
+      <point x="1916.3841858608894" y="450.0" />
+      <point x="2080.8842645381983" y="450.0" />
+      <point x="2080.8842645381983" y="676.0" />
+      <point x="147.0" y="15.0" />
+    </edge>
+    <edge source="main_engine" target="lib.JavaFileManager" relationship="DEPENDENCY">
+      <point x="131.00030387685297" y="48.30906841505134" />
+      <point x="1758.0954960091246" y="947.089" />
+      <point x="-143.28876852907342" y="137.97833523375152" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7016000000000002" showDependencies="true" x="1449.4514996579328" y="543.2987457240597" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

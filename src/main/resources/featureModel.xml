@@ -3,6 +3,7 @@
     <SpringAspect name="logging">
         <file path="\src\main\java\com\example\testspring\dbAccess\DBManagerAspect.java" />
     </SpringAspect>
+    <Polymorphism name="button"/>
     <SpringPreprocessor name="SGBD">
         <file path="\src\main\resources\application.properties">
             <var datasource="mysql" />
@@ -62,16 +63,16 @@
                 </add>
             </file>
             <file type="html" path="src/main/resources/templates/bibliotheque.html">
-                <p>
-                    <span>Nombre de like: </span>
-                    <span th:text="${productDetail.likers.size()}"></span>
-                </p>
                 <add endOf="detail">
-                    <form id="likerForm" action="#" th:action="@{/bib/like}" method="post">
-                        <input type="hidden" name="ean" th:value="${productDetail.ean}"/>
-                        <p>Nom: <input type="text" name="name"/></p>
-                        <p><input type="submit" value="Submit" /></p>
-                    </form>
+                    &lt;p&gt;
+                        &lt;span&gt;Nombre de like: &lt;/span&gt;
+                        &lt;span th:text="${productDetail.likers.size()}"&gt;&lt;/span&gt;
+                    &lt;/p&gt;
+                    &lt;form id="likerForm" action="#" th:action="@{/bib/like}" method="post"&gt;
+                        &lt;input type="hidden" name="ean" th:value="${productDetail.ean}"/&gt;
+                        &lt;p&gt;Nom: &lt;input type="text" name="name"/&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;input type="submit" value="Submit" /&gt;&lt;/p&gt;
+                    &lt;/form&gt;
                 </add>
             </file>
         </modif>

@@ -43,6 +43,7 @@ public class PluginLoader {
 
         for (int index = 0; index < tmpPlugins.length; index++) {
             tmpPlugins[index] = (Interpreter)this.interpretersPlugins.get(index).getConstructor().newInstance();
+            System.out.println("  didkikd  "+tmpPlugins[index].getName());
         }
 
         return tmpPlugins;

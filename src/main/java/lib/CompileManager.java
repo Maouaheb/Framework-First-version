@@ -23,7 +23,11 @@ public class CompileManager {
         PowerShell powerShell = PowerShell.openSession();
         PowerShellResponse response = powerShell.executeCommand("cd "+path);
         response = powerShell.executeCommand("mvn "+command);
+        powerShell.isLastCommandInError();
         powerShell.close();
         System.out.println(response.getCommandOutput());
+        if(response.isTimeout() || response.isError()){
+            System.out.println("erreur Maven");
+        }
     }
 }
